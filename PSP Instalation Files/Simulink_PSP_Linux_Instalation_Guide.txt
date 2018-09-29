@@ -1,0 +1,32 @@
+Instalar MATLAB 2016a
+
+sudo apt-get install python python-tk
+sudo usermod -a -G dialout $USER
+
+sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
+sudo apt-get update
+
+sudo apt-get install python-argparse git-core wget zip python-empy qtcreator cmake build-essential genromfs -y
+sudo apt-get install ant protobuf-compiler libeigen3-dev libopencv-dev openjdk-8-jdk openjdk-8-jre clang-3.5 lldb-3.5 -y
+
+sudo apt-get remove modemmanager
+sudo apt-get update
+
+sudo apt-get install python-serial openocd flex bison libncurses5-dev autoconf texinfo build-essential libftdi-dev libtool zlib1g-dev
+
+pushd .
+cd ~
+wget https://launchpadlibrarian.net/186124160/gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+tar -jxf gcc-arm-none-eabi-4_8-2014q3-20140805-linux.tar.bz2
+exportline="export PATH=$HOME/gcc-arm-none-eabi-4_8-2014q3/bin:\$PATH"
+if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
+popd
+
+sudo apt-get install libc6:i386 libgcc1:i386 gcc-4.8-base:i386 libstdc++5:i386 libstdc++6:i386
+
+sudo apt-get install python python-tk
+
+source ubuntu_sim_nuttx.sh
+
+Continúe los pasos desde el numeral 4.3 de la guía adjunta
+
