@@ -1,6 +1,6 @@
   #include <ESP8266WiFi.h>   
 
-  const String  clientName       = "C1";
+  const String  clientName       = "C8";
   
   char*         serverSSID;            
   char*         serverPassword;       

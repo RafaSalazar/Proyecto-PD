@@ -77,11 +77,11 @@ void setup() {
 
     // supply your own gyro offsets here, scaled for min sensitivity
       mpu.setXGyroOffset(56);
-      mpu.setYGyroOffset(23);
-      mpu.setZGyroOffset(-1);
-      mpu.setXAccelOffset(-2716);
-      mpu.setZAccelOffset(697);
-      mpu.setZAccelOffset(3347); 
+      mpu.setYGyroOffset(20);
+      mpu.setZGyroOffset(5);
+      mpu.setXAccelOffset(-760);
+      mpu.setYAccelOffset(690);
+      mpu.setZAccelOffset(1599);
     // make sure it worked (returns 0 if so)
     if (devStatus == 0) {
         // turn on the DMP, now that it's ready
@@ -120,6 +120,12 @@ void setup() {
 // ===                    MAIN PROGRAM LOOP                     ===
 // ================================================================
 
+double axmean = 0;
+double aymean = 0;
+double azmean = 0;
+int t = 1;
+int N = 10;
+long totalLaps = 0;
 
 void loop() {
   
@@ -161,15 +167,44 @@ void loop() {
               mpu.dmpGetGravity(&gravity, &q);
               mpu.dmpGetLinearAccel(&aaReal, &aa, &gravity);
               mpu.dmpGetLinearAccelInWorld(&aaWorld, &aaReal, &q);
-              if(showData){
-                Serial.print(laps);
-                Serial.print(",");
-                Serial.print(aaWorld.x);
-                Serial.print(",");
-                Serial.print(aaWorld.y);
-                Serial.print(",");
-                Serial.println(aaWorld.z);
+              
+              axmean = axmean+aaWorld.x;
+              aymean = aymean+aaWorld.y;
+              azmean = azmean+aaWorld.z;
+              totalLaps = totalLaps + laps;
+              if(t==N){
+                axmean = axmean/N;
+                aymean = aymean/N;
+                azmean = azmean/N;
+                if (abs(axmean)<60){
+                  axmean = 0;
+                }         
+                if (abs(aymean)<60){
+                  aymean = 0;
+                }
+                if (abs(azmean)<60){
+                  azmean = 0;
+                }
+                if(showData){
+                  Serial.print(totalLaps);
+                  Serial.print(",");
+                  Serial.print(axmean);
+                  Serial.print(",");
+                  Serial.print(aymean);
+                  Serial.print(",");
+                  Serial.println(azmean);
+                }
+              
+                axmean = 0;
+                aymean = 0;
+                azmean = 0;
+                totalLaps = 0;
+                t = 0;
               }
+              
+              
+              
+              t++;
           #endif
         
         blinkState = !blinkState;

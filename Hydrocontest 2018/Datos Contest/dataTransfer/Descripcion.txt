@@ -1,0 +1,25 @@
+First trash 
+Dia1 MaxPopa : hifrofoils proa y popa 15
+HeavyQu_1: Prueba CW de clasificacion 
+HeavyQuNOT_1.1: Prueba posterior a CW
+HeavyQu_Pre_2: Prueba previa a CCW
+HeavyQu_2_Fail: Prueba CCW  de clasificacion fallida 
+HeavyQu_2_Fail_2: Prueba 2 CCW de clasificacion fallida
+Light_heat3_Pre_15Pop_NoProa: Ligth previa heat 3 popa 15, sin foil de proa
+Light_NOFOIL: Prueba pre long distance sin foils
+Light_NoW_Popa10: Sin pesos , popa 10
+Light_Popa5_Proa_S_WW: pre long distance, popa 5 con proa con pesos  
+Light_Popa5_Propa_S_NoW: pre long distance, popa 5 con proa sin pesos
+Light_Popa5_S: pre long distance popa 5 sin proa 
+Light_Popa10: pre long distance popa 10 sin proa
+Light_Popa10_S: pre long distance popa 10 sin proa
+LightHeat: Heat popa 10 (por confirmar)
+LightQualiffier1: Prueba ligero 3 vueltas clasificacion CW
+LightQualifier2_10Popa: Prueba ligero 3 vueltas clasificacion CCW
+LightQualifierNOT2_5_15Popa_BttryLow: Prueba pos clasificacion ligero, bateria baja , popa 15
+LightQualifierNOT2_6_15Popa_BttryNew_BM: Prueba popa 15 bateria full motor azul
+LightQualifierNOT2_6_15Popa_BttryNew_WM: Prueba popa 15 bateria full motor blanco 
+NOTQ_Heavy_1: Pos clasificacion CCW
+
+
+Graficar Trayectoria

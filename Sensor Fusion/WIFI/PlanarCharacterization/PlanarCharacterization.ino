@@ -45,15 +45,9 @@
     AvailableClients();
     AvailableMessage();
     
-    if(digitalRead(LED0)){
-      showData = !showData;
-      delay(500);
-      }
       
-    if(PDClient[0].available() && PDClient[1].available() && PDClient[1].available() && PDClient[3].available() && showData){
-      if(dt<150){
-        delay(100);
-      }
+    if(PDClient[0].available() && readRSSI){
+      
       printInfo = true;
       Serial.print(dt);
       Serial.println(MessageComplete);
