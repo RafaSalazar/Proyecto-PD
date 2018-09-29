@@ -46,8 +46,15 @@
     AvailableMessage();
     
       
+<<<<<<< HEAD
     if(PDClient[0].available() && readRSSI){
       
+=======
+    if(PDClient[0].available() && PDClient[1].available() && PDClient[2].available() && PDClient[3].available() && showData){
+      if(dt<150){
+        delay(100);
+      }
+>>>>>>> 6dbd49aec339e1bdad5cfdf76db9fb5b8b6edc44
       printInfo = true;
       Serial.print(dt);
       Serial.println(MessageComplete);

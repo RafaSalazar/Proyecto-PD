@@ -1,11 +1,12 @@
 import time
-from beacontools import BeaconScanner, IBeaconFilter
 import pandas as pd
-from sklearn.neighbors import KNeighborsClassifier
-from numpy import array
 import numpy as np
 import cv2
 import glob
+from beacontools import BeaconScanner, IBeaconFilter
+from sklearn.neighbors import KNeighborsClassifier
+from numpy import array
+
 i = 0
 R = 0.9
 Q = 0.005
